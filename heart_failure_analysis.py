@@ -32,7 +32,7 @@ pie_chart = px.pie(
     names=sex_counts.index,
     values=sex_counts.values,
     labels={'0': 'Female', '1': 'Male'},
-    color_discrete_sequence=['#C70039', '#F6CBD0'] #maroon palette
+    color_discrete_sequence=['#7D0909', '#F6CBD0'] #maroon palette
 )
 pie_chart.update_traces(textposition='inside', textinfo='percent+value')
 st.plotly_chart(pie_chart)
