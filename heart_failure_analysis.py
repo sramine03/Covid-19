@@ -94,7 +94,7 @@ with col2:
         labels={'Age': 'Age', 'HeartDisease': 'Heart Disease Count'},
         color_discrete_sequence=px.colors.sequential.RdBu,
         height = 350,
-        width = 650
+        width = 600
     )
     st.plotly_chart(hist)
 
