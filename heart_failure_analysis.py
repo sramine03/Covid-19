@@ -3,7 +3,9 @@ import pandas as pd
 import plotly.express as px
 import matplotlib.pyplot as plt
 
+#Title
 st.set_page_config(page_title = "Heart Failure Analysis",layout = 'wide')
+st.markdown("<h1 style='text-align: center;'>Heart Failure Analysis</h1>", unsafe_allow_html=True)
 
 heart_data=pd.read_csv("https://raw.githubusercontent.com/sramine03/Covid-19/main/heart.csv")
 heart_data.head()
@@ -69,7 +71,7 @@ sex_counts = filtered_data['Sex'].value_counts()
 # Pie chart
 col1, col2 = st.columns([2,2])
 with col1:
-    st.write("**Distribution of Heart Disease by Sex**")
+    st.markdown("<h5 style='text-align: center;'>Distribution of Heart Disease by Sex</h5>", unsafe_allow_html=True)
     pie_chart = px.pie(
         filtered_data,
         names=sex_counts.index,
@@ -84,7 +86,7 @@ with col1:
 
 #Histogram
 with col2:
-    st.write("**Age Distribution with the Occurrence of Heart Disease**")
+    st.markdown("<h5 style='text-align: center;'>Age Distribution with the Occurrence of Heart Disease</h5>", unsafe_allow_html=True)
     hist=px.histogram(
         filtered_data,
         x="Age",
@@ -99,7 +101,7 @@ with col2:
 #Scatterplot
 col1, col2, col3 = st.columns([6,6,7])
 with col1:
-    st.write("**Age vs. Resting Blood Pressure**")
+    st.markdown("<h5 style='text-align: center;'>Age vs. Resting Blood Pressure</h5>", unsafe_allow_html=True)
     scatter_plot = px.scatter(
         filtered_data_resting,
         x="Age",
@@ -113,7 +115,7 @@ with col1:
     st.plotly_chart(scatter_plot)
 
 with col2:
-    st.write("**Age vs. Maximum Heart Rate**")
+    st.markdown("<h5 style='text-align: center;'>Age vs. Maximum Heart Rate</h5>", unsafe_allow_html=True)
     scatter_plot = px.scatter(
         filtered_data_maxHR,
         x="Age",
@@ -127,7 +129,7 @@ with col2:
     st.plotly_chart(scatter_plot)
 
 with col3:
-    st.write("**Age vs. Cholestrol**")
+    st.markdown("<h5 style='text-align: center;'>Age vs. Cholesterol</h5>", unsafe_allow_html=True)
     scatter_plot = px.scatter(
         filtered_data_cholesterol,
         x="Age",
@@ -139,10 +141,10 @@ with col3:
     )
     st.plotly_chart(scatter_plot)
 
-#Boxplots
+#Boxplot and Bar Charts
 col1, col2, col3 = st.columns([6,6,7])
 with col1:
-    st.write("**Cholesterol Levels vs. Chest Pain Type**")
+    st.markdown("<h5 style='text-align: center;'>Cholesterol Levels vs. Chest Pain Type</h5>", unsafe_allow_html=True)
     box_plot = px.box(
         filtered_data_cholesterol,
         x="ChestPainType",
@@ -155,7 +157,7 @@ with col1:
     st.plotly_chart(box_plot)
 
 with col2:
-    st.write("**Heart Disease vs. Chest Pain Type**")
+    st.markdown("<h5 style='text-align: center;'>Heart Disease Count vs. Chest Pain Type</h5>", unsafe_allow_html=True)
     bar = px.bar(
         filtered_data,
         x="ChestPainType",
@@ -168,7 +170,7 @@ with col2:
     st.plotly_chart(bar)
 
 with col3:
-    st.write("**Heart Disease vs. Resting ECG**")
+    st.markdown("<h5 style='text-align: center;'>Heart Disease Count vs. Resting ECG</h5>", unsafe_allow_html=True)
     bar = px.bar(
         filtered_data,
         x="RestingECG",
