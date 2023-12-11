@@ -86,7 +86,7 @@ with col1:
 
 #Histogram
 with col2:
-    st.markdown("<h5 style='text-align: center;'>Age Distribution with the Occurrence of Heart Disease</h5>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: center;'>Distribution of Heart Disease by Age</h5>", unsafe_allow_html=True)
     hist=px.histogram(
         filtered_data,
         x="Age",
@@ -107,9 +107,9 @@ with col1:
         x="Age",
         y="RestingBP",
         labels={'Age': 'Age', 'RestingBP': 'Resting Blood Pressure'},
-        color='Age',  # Use 'Age' as the color parameter to change color based on age
+        color='Age',  
         color_continuous_scale='RdBu_r',  # Use a continuous color scale
-        height = 300,
+        height = 400,
         width = 400
     )
     st.plotly_chart(scatter_plot)
@@ -121,9 +121,9 @@ with col2:
         x="Age",
         y="MaxHR",
         labels={'Age': 'Age', 'MaxHR': 'Max. Heart Rate'},
-        color='Age',  # Use 'Age' as the color parameter to change color based on age
-        color_continuous_scale='RdBu_r',  # Use a continuous color scale
-        height = 300,
+        color='Age',  
+        color_continuous_scale='RdBu_r',  
+        height = 400,
         width = 400
     )
     st.plotly_chart(scatter_plot)
@@ -134,9 +134,9 @@ with col3:
         filtered_data_cholesterol,
         x="Age",
         y="Cholesterol",
-        color='Age',  # Use 'Age' as the color parameter to change color based on age
-        color_continuous_scale='RdBu_r',  # Use a continuous color scale
-        height = 300,
+        color='Age',  
+        color_continuous_scale='RdBu_r',  
+        height = 400,
         width = 400
     )
     st.plotly_chart(scatter_plot)
@@ -176,7 +176,7 @@ with col3:
         x="RestingECG",
         y="HeartDisease",
         labels={'RestingECG': 'Resting ECG', 'HeartDisease': 'Heart Disease Count'},
-        color = 'RestingECG',  # Use a continuous color scale
+        color = 'RestingECG',  
         height = 300,
         width = 400
     )
