@@ -21,7 +21,7 @@ cholesterol = heart_data['Cholesterol'].unique().tolist()
 
 # Sidebar filters
 st.sidebar.write("**Filter by Age:**")
-selected_age = st.sidebar.slider('Select Age:', min_value=min(age), max_value=max(age), value=(min(age), max(age)))
+selected_age = st.sidebar.slider('Select Age:', min_value=20, max_value=80, value=(20, 80))
 
 st.sidebar.write("**Filter by Sex:**")
 selected_sex = st.sidebar.multiselect('Select Sex:', sex, sex)
