@@ -181,3 +181,5 @@ with col3:
         width = 400
     )
     st.plotly_chart(bar)
+
+
